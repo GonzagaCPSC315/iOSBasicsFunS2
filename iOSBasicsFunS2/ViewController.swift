@@ -20,13 +20,28 @@ import UIKit
 // - LaunchScreen.storyboard: when the app launches there is a launch screen (AKA load screen AKA splash screen)
 // - Info.plist: "property list" a dictionary storing important info about your app
 // in Android, AndroidManifest.xml
-//
+// Products group
+// - iOSBasicsFunS2.app: binary executable for your app
+
+// MARK: - MVC Design Pattern
+// design pattern: a reusable solution to a common software engineering problem
+// mvc: model - view - controller (3 layers)
+// mvc is old... used to separate state/concerns for GUI apps (graphical user interface)
+// Model layer: stores and serves data to the app
+// example: Quiz struct that will store and serve Qs and As
+// View layer: presents and manages the state of the view (what the user sees)
+// example: Main.storyboard
+// Controller layer: middleman between the Model and the View
+// handle events that the view fires, retrieve data from the model for the view to display, ...
+
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        print("hello from viewDidLoad()")
     }
 
 
