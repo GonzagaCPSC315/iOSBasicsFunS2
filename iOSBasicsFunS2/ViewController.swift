@@ -36,12 +36,40 @@ import UIKit
 
 
 class ViewController: UIViewController {
+    
+    // TODO: define a QuizModel struct
+    // that is the model layer for our simple app
+    
+    // MARK: - Connections
+    // we have some UIViews in our storyboard we built using IB
+    // we need to create "connections" between our UIViews in storyboard and properties and/or methods in ViewController.swift
+    // @IBOutlet tag
+    @IBOutlet var questionLabel: UILabel!
+    // @IBOutlet tells Xcode that this property refers to a UIView in Interface Builder
+    // UILabel! is auto unwrapped optional
+    // the open circle in the margin means invalid connection
+    // closed circle is a valid connection
+    @IBOutlet var answerLabel: UILabel!
+    
+    // @IBAction tag
+    // when the user presses Next Question button, we want a method to execute
+    // Next Question is going to fire an event
+    // we want NExt Question to notify the target (ViewController) that it should execute an action (nextQuestionPressed())
+    @IBAction func nextQuestionPressed(_ sender: UIButton) {
+        // example of the target-action pair design pattern
+        print("Hello from nextQuestionPressed()")
+    }
+    
+    @IBAction func showAnswerPressed(_ sender: UIButton) {
+        print("Hello from showAnswerPressed()")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
         print("hello from viewDidLoad()")
+        questionLabel.text = "HELLO from viewDidLoad()"
     }
 
 
