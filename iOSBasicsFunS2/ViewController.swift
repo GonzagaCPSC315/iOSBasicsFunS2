@@ -36,6 +36,7 @@ import UIKit
 
 
 class ViewController: UIViewController {
+    var quizModel = QuizModel()
     
     // TODO: define a QuizModel struct
     // that is the model layer for our simple app
@@ -58,10 +59,12 @@ class ViewController: UIViewController {
     @IBAction func nextQuestionPressed(_ sender: UIButton) {
         // example of the target-action pair design pattern
         print("Hello from nextQuestionPressed()")
+        showNextQuestion()
     }
     
     @IBAction func showAnswerPressed(_ sender: UIButton) {
         print("Hello from showAnswerPressed()")
+        answerLabel.text = quizModel.getCurrentAnswer()
     }
 
     override func viewDidLoad() {
@@ -70,8 +73,13 @@ class ViewController: UIViewController {
         
         print("hello from viewDidLoad()")
         questionLabel.text = "HELLO from viewDidLoad()"
+        
+        showNextQuestion()
     }
 
-
+    func showNextQuestion() {
+        questionLabel.text = quizModel.getNextQuestion()
+        answerLabel.text = "<Answer>"
+    }
 }
 
